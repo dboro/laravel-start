@@ -1,0 +1,29 @@
+{
+    "name": "dboro/laravel-base",
+    "description": "Start classes",
+    "authors": [
+        {
+            "name": "Dmitry Borodavkin",
+            "email": "dmitrydboro@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dboro\\LaravelStart\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dboro\\LaravelStart\\LaravelStartServiceProvider"
+            ],
+            "aliases": {
+                "LaravelStart": "Dboro\\LaravelStart\\LaravelStartFacade"
+            }
+        }
+    }
+}
