@@ -14,13 +14,6 @@ class GetAllAction extends StartAction
      */
     public function run($dto)
     {
-        if ($dto->getIsPaginate()) {
-
-        }
-        else {
-            return [
-                'data' => StartResource::collection($this->repository->getAll())
-            ];
-        }
+        return StartResource::collection($this->repository->getAll())
     }
 }

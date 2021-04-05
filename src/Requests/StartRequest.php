@@ -37,6 +37,8 @@ abstract class StartRequest extends FormRequest implements Request
         return false;
     }
 
+
+
     protected function canModel()
     {
         if (! $this->modelClass) {
