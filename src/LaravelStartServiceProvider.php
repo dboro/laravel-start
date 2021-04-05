@@ -1,9 +1,13 @@
 <?php
 
 
+
 namespace Dboro\LaravelStart;
 
 
+use Dboro\LaravelStart\Commands\DeployCommand;
+use Dboro\LaravelStart\Commands\StartCopyEntityCommand;
+use Dboro\LaravelStart\Commands\StartDeleteEntityCommand;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelStartServiceProvider extends ServiceProvider
@@ -20,5 +24,16 @@ class LaravelStartServiceProvider extends ServiceProvider
         });
 
         $this->app->alias(LaravelStart::class, 'laravel-start');
+    }
+
+    public function boot()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                StartCopyEntityCommand::class,
+                StartDeleteEntityCommand::class,
+                DeployCommand::class
+            ]);
+        }
     }
 }

@@ -10,6 +10,6 @@ class LaravelStartFacade extends Facade
 {
     public static function getFacadeAccessor()
     {
-        return 'laravel-base';
+        return 'laravel-start';
     }
 }
